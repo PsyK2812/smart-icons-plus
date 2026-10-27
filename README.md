@@ -35,3 +35,7 @@ Or manually:
 3. Restart Foundry, then enable **Smart Icons Plus** in your world. Disable the original Smart Icons to avoid two header buttons.
 
 Indexing runs in the background after the world loads (GM only). The first scan of a large Data folder can take a little while; the console (F12) shows how many files were indexed and how long it took.
+
+## Releasing a new version
+
+Push a tag like `v1.1.0` (or publish a GitHub release with that tag). The workflow sets the version in `module.json`, builds `module.zip` and attaches both to the release, so Foundry picks up the update.

@@ -1,8 +1,13 @@
 name: Build release
 
 on:
+  push:
+    tags: ["v*"]
   release:
     types: [published]
+
+env:
+  TAG: ${{ github.event.release.tag_name || github.ref_name }}
 
 jobs:
   build:
@@ -14,7 +19,6 @@ jobs:
 
       - name: Set version and URLs in module.json
         run: |
-          TAG="${{ github.event.release.tag_name }}"
           VERSION="${TAG#v}"
           REPO="${{ github.repository }}"
           jq --arg v "$VERSION" \
@@ -30,6 +34,10 @@ jobs:
       - name: Upload release assets
         uses: ncipollo/release-action@v1
         with:
+          tag: ${{ env.TAG }}
+          name: ${{ env.TAG }}
           allowUpdates: true
+          omitBodyDuringUpdate: true
+          body: "Install in Foundry with the manifest URL: https://github.com/${{ github.repository }}/releases/latest/download/module.json"
           artifacts: "module.json, module.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
