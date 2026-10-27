@@ -1,0 +1,31 @@
+{
+    "id": "smart-icons-plus",
+    "title": "Smart Icons Plus",
+    "description": "Fork of Smart Icons by Jorge Felício. Assigns icons to items by matching their names against compendium items and image file names — including every image in the server's user Data folder (worlds, uploaded assets, custom folders), not just core icons and modules.",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "13",
+        "verified": "14",
+        "maximum": "14"
+    },
+    "authors": [
+        {
+            "name": "Jorge Felício (original Smart Icons)",
+            "url": "https://github.com/jofelicio/smart-icons"
+        },
+        {
+            "name": "Yannic (Plus fork)"
+        }
+    ],
+    "esmodules": [
+        "scripts/smart-icons-plus.js"
+    ],
+    "styles": [
+        "styles/smart-icons-plus.css"
+    ],
+    "license": "LICENSE",
+    "readme": "README.md",
+    "url": "https://github.com/PsyK2812/smart-icons-plus",
+    "manifest": "https://github.com/PsyK2812/smart-icons-plus/releases/latest/download/module.json",
+    "download": "https://github.com/PsyK2812/smart-icons-plus/releases/download/v1.0.0/module.zip"
+}
