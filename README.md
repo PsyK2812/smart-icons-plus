@@ -38,4 +38,4 @@ Indexing runs in the background after the world loads (GM only). The first scan 
 
 ## Releasing a new version
 
-Push a tag like `v1.1.0` (or publish a GitHub release with that tag). The workflow sets the version in `module.json`, builds `module.zip` and attaches both to the release, so Foundry picks up the update.
+Change `"version"` in `module.json` (e.g. to `1.1.0`) and push to `main`. The workflow builds `module.zip`, creates release `v1.1.0` and attaches both files, so Foundry offers the update.
