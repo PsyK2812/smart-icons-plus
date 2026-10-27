@@ -43,6 +43,12 @@ jobs:
       - name: Zip module
         run: zip -r module.zip module.json scripts/ styles/ README.md LICENSE
 
+      - name: Point the version tag at this commit
+        if: github.ref_type != 'tag' && github.event_name != 'release'
+        run: |
+          git tag -f "${{ steps.v.outputs.tag }}" "${{ github.sha }}"
+          git push -f origin "refs/tags/${{ steps.v.outputs.tag }}"
+
       - name: Create or update release
         uses: ncipollo/release-action@v1
         with:
